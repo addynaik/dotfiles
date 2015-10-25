@@ -1,0 +1,66 @@
+[alias]
+	st = status
+  ci = commit
+	br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  cp = cherry-pick
+  report = log --author=port80labs --since='1 sunday ago' --format='%Cred%h%Creset %s %Cgreen'  --no-merges
+	cam = commit -a -m
+	praise = blame
+	staged = diff --cached
+	unstaged = diff
+	both = diff HEAD
+	oneline = log --oneline
+	amend = commit --amend
+	undo = reset --hard HEAD^
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[user]
+	email = info@port80labs.com
+	name = Addy Naik
+[push]
+	default = matching
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+[branch]
+	autosetupmerge = true
+[log]
+	decorate = short
+[color]
+	ui = auto
+	interactive = auto
+	diff = auto
+	branch = auto
+	status = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[pager]
+	status = true
+	show-branch = true
+[format]
+	numbered = auto
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[core]
+	editor = /Applications/Sublime\\ Text.app/Contents/SharedSupport/bin/subl
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
