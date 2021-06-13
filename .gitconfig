@@ -1,12 +1,12 @@
 [alias]
 	st = status
-  ci = commit
+  	ci = commit
 	br = branch
-  co = checkout
-  df = diff
-  lg = log -p
-  cp = cherry-pick
-  report = log --author=port80labs --since='1 sunday ago' --format='%Cred%h%Creset %s %Cgreen'  --no-merges
+  	co = checkout
+  	df = diff
+  	lg = log -p
+  	cp = cherry-pick
+  	report = log --author=port80labs --since='1 sunday ago' --format='%Cred%h%Creset %s %Cgreen'  --no-merges
 	cam = commit -a -m
 	praise = blame
 	staged = diff --cached
@@ -52,6 +52,8 @@
 [pager]
 	status = true
 	show-branch = true
+	branch = false
+	diff = false
 [format]
 	numbered = auto
 [filter "media"]
@@ -64,3 +66,6 @@
 	required = true
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
+[merge]
+	commit = no
+	ff = no
